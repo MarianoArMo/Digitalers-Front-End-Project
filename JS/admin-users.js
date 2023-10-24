@@ -39,7 +39,7 @@ function pintarUsuarios(array) {
                 <td class="table-rol">${obtenerFecha()}</td>
                 <td class="table-actions">
                     <div class="text-center">
-                        <button class="btn-delete btn btn-danger btn-sm" onclick="borrarProducto('${usr.id}')">
+                        <button class="btn-delete btn btn-danger btn-sm" onclick="borrarUsuario('${usr.id}')">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </div>
@@ -71,7 +71,7 @@ inputFiltrarHTML.addEventListener('keyup', (evt) => {
 
 
 
-const borrarProducto = (idABuscar) => {
+const borrarUsuario = (idABuscar) => {
     Swal.fire({
         title: 'Desea borrar el usuario',
         icon: 'error',
