@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Music - Admin products</title>
+    <link rel="shortcut icon" href="/assets/images/musica.png">
+    <!-- ?===== FONT AWESOME ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ?===== BOOTSTRAP ===== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <!-- ?===== CSS ===== -->
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <script src="/JS/guard.js"></script>
+</head>
+<body>
+        <!-- !============= HEADER BOOTSTRAP ============= -->
+        <header class="main-header">
+            <nav class="navbar navbar-expand-lg header-custom" style="background-color: #9175a8;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/index.html">
+                        <i class="fa-solid fa-music header-logo" ></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="main-menu-button">
+                            <i class="fa-solid fa-bars"></i>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ul-color">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/contact/contact.html">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/about-us/about-us.html">Nosotros</a>
+                            </li>
+                            
+                        </ul>
+                        <div class="user-info">
+                            <a href="#" class="cart-icon">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+    
+                            <div id="header-user-name" style="color: #fff;">
+    
+    
+                            </div>
+    
+                            <div id="header-user-action">
+    
+    
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="admin-products-container">
+                <h2>Lista de productos</h2>
+                <button type="button" class="btn m-2 add-button" data-bs-toggle="modal" data-bs-target="#formModal">
+                    Añadir producto</button>
+                <div class="table-container">
+                    <div class="mb-3">
+                        <label for="filtrar" class="form-label px-1">Filtrar</label>
+                        <input type="text" class="form-control" id="filtrar" placeholder="Nombre producto">
+                      </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+
+
+
+
+            <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                   
+                    <form id="formularioProducto" style="background-color: #9175a8; color: #ffffff;">
+            
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cargar nuevo producto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        
+                        <div class="mb-3">
+                          <label for="tituloProducto" class="form-label">Nombre producto</label>
+                          <input type="text" name="tituloName" class="form-control" id="tituloProducto" 
+                            required minlength="3" maxlength="70">
+                        </div>
+                       
+                        <div class="mb-3 d-flex gap-3">
+                          <div class="w-100">
+                            <label for="precioProducto" class="form-label">Precio</label>
+                            <input type="number" name="precio" id="precioProducto" class="form-control" required
+                              min="1" max="20000000" step=".01">
+                          </div>
+                          <div class="w-100">
+                            <label for="categoriaProducto" class="form-label">Categoria</label>
+                            <select class="form-select" id="categoriaProducto" name="categoria" required>
+                             
+                              <option value="Album">Album</option>
+                              <option value="EP">EP</option>
+                            </select>
+                          </div>
+                        </div>
+                       
+                        <div class="mb-3">
+                          <label for="imagen" class="form-label">URL de la imagen</label>
+                          <input type="url" name="imagen" class="form-control" id="imagen"
+                            required minlength="3" maxlength="300">
+                        </div>
+            
+                       
+                        <div class="mb-3">
+                          <label for="descripcionProducto" class="form-label">Descripcion del producto</label>
+                          <textarea name="descripcion" class="form-control" id="descripcionProducto" rows="3" required minlength="4"
+                            maxlength="400"></textarea>
+                        </div>
+            
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" id="cancel" class="btn" data-bs-dismiss="modal">Cancelar</button>
+            
+            
+                        <button type="submit" class="btn" data-bs-dismiss="modal">Agregar producto</button>
+                      </div>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+        </main>
+
+
+                <!-- !=============== FOOTER ==================== -->
+
+                <footer>
+                    <div class="grid text-center main-footer">
+                        <div class="g-col-6 g-col-md-4 social-media">
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="g-col-6 g-col-md-4 logo-footer">
+                            <a href="/index.html">
+                                
+                                <i class="fa-solid fa-music"></i>
+                                
+                            </a>
+                            <a href="#">
+                                <div class="footer-pagename">Find Music</div>
+                            </a>
+                            <div class="footer-copyright">
+                                <a href="#">
+                                    <span>©2023 Mariano Arias Morer
+                                </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="g-col-6 g-col-md-4 footer-info">
+                            <a href="#">
+                                <i class="fa-solid fa-phone"></i>
+                                <span class="footer-infos">+543815753947</span>
+                            </a>
+                            <a href="#">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span class="footer-infos">marianoalejandroariasmorer@gmail.com</span>
+                            </a>
+                            <a href="#">
+                                <i class="fa-solid fa-location-dot">
+                                    
+                                </i>
+                                <span class="footer-infos">Banda del Río Salí, Tucumán, Argentina.</span>
+                            </a>
+                
+                        </div>
+                    </div>
+                </footer>
+                
+                
+                
+                
+                
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="/JS/admin-products.js"></script>
+                <script src="/JS/user-info.js"></script>
+</body>
+</html>

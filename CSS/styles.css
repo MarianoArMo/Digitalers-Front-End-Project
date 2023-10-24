@@ -90,6 +90,44 @@ body{
     margin-bottom: .5rem;
 }
 
+
+
+.login-btn{
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: .3s ease;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+.login-btn:hover{
+    background-color: var(--secondary-color);
+}
+
+.logout-btn {
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.logout-btn:hover{
+    border: 2px solid #ffffff;
+    background-color: var(--secondary-color);
+}
 .name{
     color: white;
 }
@@ -269,6 +307,11 @@ body{
     transition: all .2s ease-in-out;
 }
 
+.card-footer button a{
+    color: #fff;
+    text-decoration: none;
+}
+
 .card-footer button:hover{
     background-color: var(--secondary-color);
     color: #ffffff;
@@ -333,7 +376,7 @@ body{
 }
 
 .social-media{
-    padding: 20px;
+    padding: 10px;
 }
 
 .social-media a{
@@ -605,8 +648,360 @@ body{
 .register-button{
     background-color: var(--primary-color);
     color: white;
+    border: 2px solid var(--primary-color);
 }
 
 .register-button:hover{
     border: 2px solid #ffffff;
+}
+
+
+
+/* *================ ADMIN PRODUCTS STYLES ==================== */
+
+
+.admin-products-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--terciary-color);
+    padding: 10px;
+    min-height: 100dvh;
+}
+
+.admin-products-container h2{
+    color: #ffffff;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.add-button{
+    color: #ffffff;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.add-button:hover{
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.table-container{
+    color: #ffffff;
+    background-color: var(--secondary-color);
+    border: 4px solid transparent;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.75);
+    max-width: 100%;
+    overflow-x: auto;
+    padding: .5rem;
+}
+
+.table-container table{
+    border-collapse: collapse;
+}
+
+.table-container th{
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color) ;
+    padding: 0 .5rem;
+}
+
+.table-container td{
+    text-align: center;
+    padding: .5rem .5rem;
+}
+
+.table-container td:not(:last-child){
+    border-right: 2px solid var(--primary-color);
+}
+
+.table-container img{
+    height: 70px;
+    width: 70px;
+}
+
+.modal-footer .btn{
+    color: #ffffff;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.modal-footer .btn:hover{
+    border: 1px solid #ffffff;
+    background-color: var(--terciary-color);
+    color: #ffffff;
+}
+
+
+
+
+
+/* *====================LOGIN PAGE STYLES ================================= */
+
+.login-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    background-color: var(--terciary-color);
+}
+
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    border: 4px solid transparent;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.75); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+}
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.form-box h2{
+    font-size: 2em;
+    text-align: center;
+    color: #ffffff;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #ffffff;
+    margin: 30px 0;
+}
+
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    translate: translateY(-50%);
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -15px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 400;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #ffffff;
+    line-height: 57px;
+}
+
+.login-button{
+    width: 100%;
+    height: 45px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.login-button:hover{
+    border: 2px solid #ffffff;
+    background-color: var(--secondary-color);
+}
+
+
+.login-register{
+    font-size: .9em;
+    color: #ffffff;
+    font-weight: 500;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+
+
+/* *================ DETAILS PAGE STYLES ===================== */
+
+.main-container-details{
+    background-color:var(--terciary-color);
+    min-height: 100dvh;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-details-container{
+    background-color: var(--secondary-color);
+    display: flex;
+    height: 500px;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.75);
+}
+
+.product-details-container span{
+    border-bottom: 2px solid var(--primary-color);
+    margin: 8px 0;
+    width: 100%;
+}
+
+.product-details-image{
+    width: 50%;
+    height: 100%;
+}
+
+.product-details-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 1rem;
+}
+
+.product-details-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.product-details-info h2{
+    color: #fff;
+    margin-top: 1rem;
+    font-weight: 600;
+    
+}
+
+.product-details-info .product-description{
+    color: #fff;
+}
+
+.product-description h5{
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.product-description p{
+    margin: 0 0 .5rem;
+}
+
+.product-details-info .product-money{
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.product-details-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: auto;
+}
+
+.product-details-buttons button{
+    background-color:var(--primary-color);
+    color: #ffffff;
+    padding: 6px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    
+}
+.product-details-buttons button:hover{
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+@media (max-width: 770px){
+
+    .product-details-container{
+        background-color: var(--secondary-color);
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .product-details-image{
+        width: 100%;
+        height: 50%;
+    }
+    
+    .product-details-container span{
+        margin: 1rem 0;
+    }
+
+    .product-details-container img{
+        padding: 12px 0 0;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px ;
+    }
+
+    .product-details-info{
+        width: 100%;
+        height: 50%;
+        align-items: start;
+        padding: 0;
+    }
+        
+    .product-description h5{
+        margin-bottom: .5rem;
+    }
+
+    .product-details-buttons{
+        margin-bottom: 1rem;
+    }
+
+    .product-details-buttons button{
+        flex-direction: column;
+    }
+
+    .product-details-info h2{
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
 }
