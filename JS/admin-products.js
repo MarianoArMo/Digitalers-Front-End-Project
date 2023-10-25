@@ -4,6 +4,8 @@ let album = JSON.parse(localStorage.getItem("products")) || albums
 
 const cancelBtn = document.getElementById('cancel')
 
+const closeBtn = document.querySelector('.btn-close')
+
 
 
 let idEditar;
@@ -194,6 +196,15 @@ const editarProducto = function(idRecibido) {
 
 
 cancelBtn.addEventListener('click', () => {
+    formularioProductoHTML.reset()
+    idEditar = undefined
+
+    btn.innerText = "Agregar producto"
+    btn.classList.remove("btn-success")
+    
+})
+
+closeBtn.addEventListener('click', () => {
     formularioProductoHTML.reset()
     idEditar = undefined
 
